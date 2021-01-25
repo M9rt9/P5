@@ -411,6 +411,8 @@ synth sintesis_intr.orc sol.sco fm1.wav
 - **Indique, a continuación, la orden necesaria para generar la señal (suponiendo que todos los archivos**
   **necesarios están en directorio indicado).**
 
+
+
 **También puede orquestar otros temas más complejos, como la banda sonora de *Hawaii5-0* o el villacinco de**
 **John Lennon *Happy Xmas (War Is Over)* (fichero `The_Christmas_Song_Lennon.sco`), o cualquier otra canción**
 **de su agrado o composición. Se valorará la riqueza instrumental, su modelado y el resultado final.**

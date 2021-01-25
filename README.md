@@ -68,8 +68,6 @@ InstrumentDumb	ADSR_A=0.05; ADSR_D=0.1; ADSR_S=0.2; ADSR_R=0.1; N=40;
 InstrumentDumb	ADSR_A=0.02; ADSR_D=0; ADSR_S=0.5; ADSR_R=0.02; N=40;
 ```
 
-<img src="imagenes/plano.png" width="1000" align="center">
-
 
 **Para los cuatro casos, deberá incluir una gráfica en la que se visualice claramente la curva ADSR. Deberá añadir la información necesaria para su correcta interpretación, aunque esa información puede reducirse a colocar etiquetas y títulos adecuados en la propia gráfica (se valorará positivamente esta alternativa).**
 

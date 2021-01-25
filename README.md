@@ -420,7 +420,7 @@ Hemos usado el clarinete. El audio de la versión de esta canción con nuestro c
 
 #### Pantera Rosa
 
-<img src="imagenes/pantera.jpeg" width="800" align="center">
+<img src="imagenes/pantera.jpg" width="800" align="center">
 
 
 **También puede orquestar otros temas más complejos, como la banda sonora de *Hawaii5-0* o el villacinco de**

@@ -211,7 +211,7 @@ Cuando reproducíamos el audio, oíamos perfectamente el vibrato. Aun así, a la
 
 En la siguiente imagen, podemos comparar claramente el vibrato en el espectograma de la izquierda, y sin vibrato en la derecha. 
 
-<img src="imagenes/doremivibrato2.png" width="800" align="center">
+<img src="imagenes/doremivibrato2.png" width="400" align="center">
 
 - **Si ha generado algún efecto por su cuenta, explique en qué consiste, cómo lo ha implementado y qué**
   **resultado ha producido. Incluya, en el directorio `work/ejemplos`, los ficheros necesarios para apreciar**
@@ -270,11 +270,11 @@ Ahora ya estamos listos para introducir el siguiente comando en la terminal:
 synth sintesis_intr.orc sol.sco fm1.wav
 ```
 
-<img src="imagenes/11.png" width="800" align="center">
+<img src="imagenes/11.png" width="1000" align="center">
 
 Haciendo zoom:
 
-<img src="imagenes/22.png" width="800" align="center">
+<img src="imagenes/22.png" width="1000" align="center">
 
 Ahora ya podemos ir jugando con la I. 
 
@@ -294,7 +294,7 @@ Modificamos `sintesis_intr.orc`:
 
 Y el resultado, después de crear el .wav, es el siguiente:
 
-<img src="imagenes/33.png" width="800" align="center">
+<img src="imagenes/33.png" width="1000" align="center">
 
 Como vemos y como era de esperar, al aumentar la I, tambien se hace más notoria y abrupta. 
 
@@ -308,7 +308,7 @@ Como vemos y como era de esperar, al aumentar la I, tambien se hace más notoria
 
 Volvemos a modificar `sintesis_intr.orc`, y haciendo los pasos de siempre, obtenemos:
 
-<img src="imagenes/33.png" width="800" align="center">
+<img src="imagenes/33.png" width="1000" align="center">
 
 Tal i como se observa, es muy leve la notoriedad de la I cuando vamos disminuyendo. De hecho, con valores inferiores a 5, no se notaba a simple vista. 
 
@@ -316,8 +316,8 @@ Tal i como se observa, es muy leve la notoriedad de la I cuando vamos disminuyen
 
 Ahora toca dejar fija la I, y variar la N1 y N2. Para empezar, si recordamos, antes notabamos la I cada 10 periodos de la señal. Entonces, si ahora varíamos el valor de N1 y N2 de forma que fc sea 4 veces fm, vemos como la I aparecerá cada 4 periodos, en lugar de 10. 
 
-- [x] I = 5
-- [ ] I = 10
+- [ ] I = 5
+- [x] I = 10
 - [ ] I = 20
 - [ ] N1 = 100, N2 = 10
 - [x] N1 = 40, N2 = 10

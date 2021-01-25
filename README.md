@@ -33,10 +33,6 @@ InstrumentDumb	ADSR_A=0.05; ADSR_D=0.1; ADSR_S=0.2; ADSR_R=0.1; N=40;
 * **Un instrumento *percusivo*, como una guitarra o un piano, en el que el sonido tenga un ataque rápido, no**
   **haya mantenimiemto y el sonido se apague lentamente.**
   
-  La forma sería la siguiente:
-  
-  <img src="imagenes/percusion.png" width="300" align="center">
-
   - **Para un instrumento de este tipo, tenemos dos situaciones posibles:**
     **El intérprete mantiene la nota *pulsada* hasta su completa extinción.**
 
@@ -50,8 +46,7 @@ InstrumentDumb	ADSR_A=0.05; ADSR_D=0.1; ADSR_S=0.2; ADSR_R=0.1; N=40;
 
 *nota*: Como vemos, he usado la misma fotografía que en el anterior caso, ya que es el mismo. 
 
-   **El intérprete da por finalizada la nota antes de su completa extinción, iniciándose una disminución**
-	  **abrupta del sonido hasta su finalización.*
+   **El intérprete da por finalizada la nota antes de su completa extinción, iniciándose una disminució abrupta del sonido hasta su finalización.**
 	  
    Si se produce que el músico no aguanta la nota hasta el final, entonces habría una breve liberación.
 
@@ -63,6 +58,8 @@ InstrumentDumb	ADSR_A=0.05; ADSR_D=0.1; ADSR_S=0.2; ADSR_R=0.1; N=40;
 
 
   - **Debera representar en esta memoria ambos posibles finales de la nota.**
+  
+  
 * **Un instrumento *plano*, como los de cuerdas frotadas (violines y semejantes) o algunos de viento. En**
   **ellos, el ataque es relativamente rápido hasta alcanzar el nivel de mantenimiento (sin sobrecarga), y la**
   **liberación también es bastante rápida.**

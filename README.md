@@ -384,7 +384,7 @@ synth sintesis_intr.orc sol.sco fm1.wav
   Por tanto, el fichero `campana.orc` nos queda así:
  
 ```
-1	Campana	ADSR_A=0.001; ADSR_D=0.01; ADSR_S=0.01; ADSR_R=0.1; N1=200; N2=280; I=10;
+1	fm	ADSR_A=0.0001; ADSR_D=0.01; ADSR_S=0.01; ADSR_R=0.1; N1=200; N2=280; I=10;
 ```
 
 #### Clarinete

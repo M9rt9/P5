@@ -1,14 +1,9 @@
 PAV - P5: síntesis musical polifónica
 =====================================
 
-Obtenga su copia del repositorio de la práctica accediendo a [Práctica 5](https://github.com/albino-pav/P5) 
-y pulsando sobre el botón `Fork` situado en la esquina superior derecha. A continuación, siga las
-instrucciones de la [Práctica 2](https://github.com/albino-pav/P2) para crear una rama con el apellido de
-los integrantes del grupo de prácticas, dar de alta al resto de integrantes como colaboradores del proyecto
-y crear la copias locales del repositorio.
+**Obtenga su copia del repositorio de la práctica accediendo a [Práctica 5](https://github.com/albino-pav/P5) y pulsando sobre el botón `Fork` situado en la esquina superior derecha. A continuación, siga las instrucciones de la [Práctica 2](https://github.com/albino-pav/P2) para crear una rama con el apellido de los integrantes del grupo de prácticas, dar de alta al resto de integrantes como colaboradores del proyecto y crear la copias locales del repositorio.**
 
-Como entrega deberá realizar un *pull request* con el contenido de su copia del repositorio. Recuerde que
-los ficheros entregados deberán estar en condiciones de ser ejecutados con sólo ejecutar:
+**Como entrega deberá realizar un *pull request* con el contenido de su copia del repositorio. Recuerde que los ficheros entregados deberán estar en condiciones de ser ejecutados con sólo ejecutar:**
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~.sh
   make release

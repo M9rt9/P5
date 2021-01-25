@@ -236,13 +236,7 @@ Entonces,
 
 fc = fm * N1/N2.
 
-Para llevar a cabo este apartado, vamos a ir haciendo combinaciones con los siguientes parámetros:
-
-- [ ] I = 5
-- [ ] I = 10
-- [ ] I = 20
-- [ ] N1 = 100, N2 = 10
-- [ ] N1 = 40, N2 = 10
+Para llevar a cabo este apartado, vamos a ir haciendo combinaciones con los siguientes parámetros. 
 
 #### Variando la I, dejando la N1 y N2 fija
 

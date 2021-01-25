@@ -21,7 +21,7 @@ Ejercicios.
 * **Un instrumento con una envolvente ADSR genérica, para el que se aprecie con claridad cada uno de sus**
   **parámetros: ataque (A), caída (D), mantenimiento (S) y liberación (R).**
 
-Con los siguientes valores, se pueden observar claramente las distintas fases, ilustradas y etiquetadas en la imagen a continuación. 
+  Con los siguientes valores, se pueden observar claramente las distintas fases, ilustradas y etiquetadas en la imagen a continuación. 
 
 ```
 InstrumentDumb	ADSR_A=0.05; ADSR_D=0.1; ADSR_S=0.2; ADSR_R=0.1; N=40;
@@ -35,25 +35,30 @@ InstrumentDumb	ADSR_A=0.05; ADSR_D=0.1; ADSR_S=0.2; ADSR_R=0.1; N=40;
   
   La forma sería la siguiente:
   
-  <img src="imagenes/percusion.png" width="500" align="center">
+  <img src="imagenes/percusion.png" width="300" align="center">
 
   - **Para un instrumento de este tipo, tenemos dos situaciones posibles:**
     **El intérprete mantiene la nota *pulsada* hasta su completa extinción.**
-En un instrumento percusivo, normalmente sólo se usa el ataque, que indica el tiempo que se tarda en alcanzar el valor máximo, y la caída, que es el tiempo que se tarda en bajar desde el valor máximo hasta cero. Si el músico aguantara la nota, entonces la señal tendría esta forma:
+
+    En un instrumento percusivo, normalmente sólo se usa el ataque, que indica el tiempo que se tarda en alcanzar el valor máximo, y la caída, que es el tiempo que     se tarda en bajar desde el valor máximo hasta cero. Si el músico aguantara la nota, entonces la señal tendría esta forma:
+
 ```
 1	InstrumentDumb	ADSR_A=0.1; ADSR_D=0.2; ADSR_S=0; ADSR_R=0; N=40;
 ```
-<img src="imagenes/percusion.png" width="500" align="center">
+
+<img src="imagenes/percusion.png" width="300" align="center">
 
 *nota*: Como vemos, he usado la misma fotografía que en el anterior caso, ya que es el mismo. 
 
    **El intérprete da por finalizada la nota antes de su completa extinción, iniciándose una disminución**
 	  **abrupta del sonido hasta su finalización.*
 	  
-Si se produce que el músico no aguanta la nota hasta el final, entonces habría una breve liberación.
+   Si se produce que el músico no aguanta la nota hasta el final, entonces habría una breve liberación.
+
 ```
 1	InstrumentDumb	ADSR_A=0.3; ADSR_D=0.5; ADSR_S=0; ADSR_R=0.1; N=40;
 ```
+
 <img src="imagenes/percusion2.png" width="1000" align="center">
 
 

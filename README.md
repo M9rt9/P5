@@ -251,6 +251,7 @@ Para llevar a cabo este apartado, vamos a ir haciendo combinaciones con los sigu
 Como vemos, hacemos fm 10 veces mayor a fc, y la I la pon
 
 Todo esto lo ponemos en un nuevo fichero llamado `sintesis_intr.orc`:
+
 ```
 1	fm	ADSR_A=0.08; ADSR_D=0; ADSR_S=0.4; ADSR_R=0.02; N1=100; N2=10; I=10;
 ```
@@ -264,6 +265,7 @@ Para hacer las pruebas, hemos creado una nota sol, en un fichero `sol.sco`:
 ```
 
 Ahora ya estamos listos para introducir el siguiente comando en la terminal:
+
 ```
 synth sintesis_intr.orc sol.sco fm1.wav
 ```
@@ -274,9 +276,53 @@ Haciendo zoom:
 
 <img src="imagenes/22.png" width="800" align="center">
 
+Ahora ya podemos ir jugando con la I. 
 
+- Caso 2: aumentamos I
+
+- [ ] I = 5
+- [ ] I = 10
+- [x] I = 20
+- [x] N1 = 100, N2 = 10
+- [ ] N1 = 40, N2 = 10
+
+Modificamos `sintesis_intr.orc`:
+
+```
+1	fm	ADSR_A=0.08; ADSR_D=0; ADSR_S=0.4; ADSR_R=0.02; N1=100; N2=10; I=20;
+```
+
+Y el resultado, después de crear el .wav, es el siguiente:
+
+<img src="imagenes/33.png" width="800" align="center">
+
+Como vemos y como era de esperar, al aumentar la I, tambien se hace más notoria y abrupta. 
+
+- Caso 3: disminuímos I
+
+- [x] I = 5
+- [ ] I = 10
+- [ ] I = 20
+- [x] N1 = 100, N2 = 10
+- [ ] N1 = 40, N2 = 10
+
+Volvemos a modificar `sintesis_intr.orc`, y haciendo los pasos de siempre, obtenemos:
+
+<img src="imagenes/33.png" width="800" align="center">
+
+Tal i como se observa, es muy leve la notoriedad de la I cuando vamos disminuyendo. De hecho, con valores inferiores a 5, no se notaba a simple vista. 
 
 #### Variando la N1 y N2, dejando la I fija
+
+Ahora toca dejar fija la I, y variar la N1 y N2. Para empezar, si recordamos, antes notabamos la I cada 10 periodos de la señal. Entonces, si ahora varíamos el valor de N1 y N2 de forma que fc sea 4 veces fm, vemos como la I aparecerá cada 4 periodos, en lugar de 10. 
+
+- [x] I = 5
+- [ ] I = 10
+- [ ] I = 20
+- [ ] N1 = 100, N2 = 10
+- [x] N1 = 40, N2 = 10
+
+<img src="imagenes/44.png" width="800" align="center">
 
 
 - **Use el instrumento para generar un sonido tipo clarinete y otro tipo campana. Tome los parámetros del**

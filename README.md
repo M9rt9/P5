@@ -171,7 +171,7 @@ Entonces, creamos un `doremitremolo.sco` con tremolo (substituyendo algunos valo
 
 El resultado lo podemos ver en el wavesurfer:
 
-<img src="imagenes/doremitremo" width="800" align="center">
+<img src="imagenes/doremitremo.png" width="800" align="center">
 
   #### Vibrato
   
@@ -207,17 +207,17 @@ Creamos un `doremivibrato.sco` donde en lugar de 13 ponemos 23 (de esta forma se
 
 Cuando reproducíamos el audio, oíamos perfectamente el vibrato. Aun así, a la hora de buscarlo por la señal, no lo encontrabamos. Entonces nos dimos cuenta de que una buena forma de verlo, donde se aprecia claramente, es en el espectograma. 
 
-<img src="imagenes/doremivibrato1" width="800" align="center">
+<img src="imagenes/doremivibrato1.png" width="800" align="center">
 
 En la siguiente imagen, podemos comparar claramente el vibrato en el espectograma de la izquierda, y sin vibrato en la derecha. 
 
-<img src="imagenes/doremivibrato2" width="800" align="center">
+<img src="imagenes/doremivibrato2.png" width="800" align="center">
 
 - **Si ha generado algún efecto por su cuenta, explique en qué consiste, cómo lo ha implementado y qué**
   **resultado ha producido. Incluya, en el directorio `work/ejemplos`, los ficheros necesarios para apreciar**
   **el efecto, e indique, a continuación, la orden necesaria para generar los ficheros de audio usando el**
   **programa `synth`.**
-
+  
 ### Síntesis FM.
 
 **Construya un instrumento de síntesis FM, según las explicaciones contenidas en el enunciado y el artículo**
@@ -228,7 +228,62 @@ En la siguiente imagen, podemos comparar claramente el vibrato en el espectogram
 - **Use el instrumento para generar un vibrato de *parámetros razonables* e incluya una gráfica en la que se**
   **vea, claramente, la correspondencia entre los valores `N1`, `N2` e `I` con la señal obtenida.**
 
-  
+Leyendo el documento de John, sabemos que:
+
+c/m = N1/N2
+
+Entonces, 
+
+fc = fm * N1/N2.
+
+Para llevar a cabo este apartado, vamos a ir haciendo combinaciones con los siguientes parámetros:
+
+- [ ] I = 5
+- [ ] I = 10
+- [ ] I = 20
+- [ ] N1 = 100, N2 = 10
+- [ ] N1 = 40, N2 = 10
+
+#### Variando la I, dejando la N1 y N2 fija
+
+- Caso 1: 
+
+- [ ] I = 5
+- [x] I = 10
+- [ ] I = 20
+- [x] N1 = 100, N2 = 10
+- [ ] N1 = 40, N2 = 10
+
+Como vemos, hacemos fm 10 veces mayor a fc, y la I la pon
+
+Todo esto lo ponemos en un nuevo fichero llamado `sintesis_intr.orc`:
+```
+1	fm	ADSR_A=0.08; ADSR_D=0; ADSR_S=0.4; ADSR_R=0.02; N1=100; N2=10; I=10;
+```
+
+Para hacer las pruebas, hemos creado una nota sol, en un fichero `sol.sco`:
+
+```
+40	9	1	67	100
+120	8	1	67	100
+40	0	1	0	0
+```
+
+Ahora ya estamos listos para introducir el siguiente comando en la terminal:
+```
+synth sintesis_intr.orc sol.sco fm1.wav
+```
+
+<img src="imagenes/11.png" width="800" align="center">
+
+Haciendo zoom:
+
+<img src="imagenes/22.png" width="800" align="center">
+
+
+
+#### Variando la N1 y N2, dejando la I fija
+
 
 - **Use el instrumento para generar un sonido tipo clarinete y otro tipo campana. Tome los parámetros del**
   **sonido (N1, N2 e I) y de la envolvente ADSR del citado artículo. Con estos sonidos, genere sendas escalas**

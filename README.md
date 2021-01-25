@@ -21,11 +21,13 @@ Ejercicios.
 * **Un instrumento con una envolvente ADSR genérica, para el que se aprecie con claridad cada uno de sus**
   **parámetros: ataque (A), caída (D), mantenimiento (S) y liberación (R).**
 
+Con los siguientes valores, se pueden observar claramente las distintas fases, ilustradas y etiquetadas en la imagen a continuación. 
 
 ```
 InstrumentDumb	ADSR_A=0.05; ADSR_D=0.1; ADSR_S=0.2; ADSR_R=0.1; N=40;
 ```
-<img src="imagenes/1.png" width="800" align="center">
+
+<img src="imagenes/1.png" width="1000" align="center">
 
 
 * **Un instrumento *percusivo*, como una guitarra o un piano, en el que el sonido tenga un ataque rápido, no**

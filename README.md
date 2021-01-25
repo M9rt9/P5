@@ -374,6 +374,33 @@ synth sintesis_intr.orc sol.sco fm1.wav
     **ejemplo, violines, pianos, percusiones, espadas láser de la**
 	**[Guerra de las Galaxias](https://www.starwars.com/), etc.**
 
+#### Campana
+  Mirando el documento de John, queremos que con tal de hacer una campana, la curva tenga esta pinta:
+
+<img src="imagenes/a.png" width="800" align="center">
+
+  Para establecer los valores de N1, N2, tambien nos fijamos en el documento de John, donde para crear un sonido de campana usa P5 = 200 Hz P6 = 280 Hz. (P5 = frecuencia portadora, P6 = frecuencia de modulacion). Para la I tambien usamos los valores que nos proporciona John (valor P8 en el documento)
+
+  Por tanto, el fichero `campana.orc` nos queda así:
+ 
+```
+1	Campana	ADSR_A=0.001; ADSR_D=0.01; ADSR_S=0.01; ADSR_R=0.1; N1=200; N2=280; I=10;
+```
+
+#### Clarinete
+
+  En el documento de John, nos especifican: P5 = 900 Hz, P6 = 600 Hz y P8 = 2. 
+  Por tanto, nos quedaría aprox así:
+  
+```
+1	fm	ADSR_A=0.1; ADSR_D=0; ADSR_S=0.9; ADSR_R=0; N1=900; N2=600; I=2;
+```
+
+  A su vez, un instrumento de viento tendría esta forma, con un mantenimiento larguísimo. Los parametros de ataque, caida etc de un instrumiento de viento y madera, seguirian esta estructura (de ahí hemos sacado los valores)
+
+<img src="imagenes/b.png" width="800" align="center">
+
+
 ### Orquestación usando el programa synth.
 
 **Use el programa `synth` para generar canciones a partir de su partitura MIDI. Como mínimo, deberá incluir la *orquestación* de la canción *You've got a friend in me* (fichero `ToyStory_A_Friend_in_me.sco`) del genial [Randy Newman](https://open.spotify.com/artist/3HQyFCFFfJO3KKBlUfZsyW/about).**

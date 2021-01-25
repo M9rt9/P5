@@ -411,6 +411,16 @@ synth sintesis_intr.orc sol.sco fm1.wav
 - **Indique, a continuación, la orden necesaria para generar la señal (suponiendo que todos los archivos**
   **necesarios están en directorio indicado).**
 
+Reconozco que hemos hecho trampas. He movido el fichero `ToyStory_A_Friend_in_me.sco` a la carpeta /work. Acto seguido, introducimos la siguiente orden al terminal:
+```
+synth clarinete.orc ToyStory_A_Friend_in_me.sco toystory.wav 
+```
+
+Hemos usado el clarinete. El audio de la versión de esta canción con nuestro clarinete, está en la carpeta /work. 
+
+#### Pantera Rosa
+
+<img src="imagenes/pantera.png" width="800" align="center">
 
 
 **También puede orquestar otros temas más complejos, como la banda sonora de *Hawaii5-0* o el villacinco de**

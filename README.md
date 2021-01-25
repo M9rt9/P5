@@ -35,7 +35,7 @@ InstrumentDumb	ADSR_A=0.05; ADSR_D=0.1; ADSR_S=0.2; ADSR_R=0.1; N=40;
   
   La forma sería la siguiente:
   
-  <img src="imagenes/percusion.png" width="1000" align="center">
+  <img src="imagenes/percusion.png" width="500" align="center">
 
   - **Para un instrumento de este tipo, tenemos dos situaciones posibles:**
     **El intérprete mantiene la nota *pulsada* hasta su completa extinción.**
@@ -43,7 +43,7 @@ En un instrumento percusivo, normalmente sólo se usa el ataque, que indica el t
 ```
 1	InstrumentDumb	ADSR_A=0.1; ADSR_D=0.2; ADSR_S=0; ADSR_R=0; N=40;
 ```
-<img src="imagenes/percusion.png" width="1000" align="center">
+<img src="imagenes/percusion.png" width="500" align="center">
 
 *nota*: Como vemos, he usado la misma fotografía que en el anterior caso, ya que es el mismo. 
 
@@ -62,7 +62,7 @@ Si se produce que el músico no aguanta la nota hasta el final, entonces habría
   **ellos, el ataque es relativamente rápido hasta alcanzar el nivel de mantenimiento (sin sobrecarga), y la**
   **liberación también es bastante rápida.**
 
-<img src="imagenes/plano.png" width="800" align="center">
+<img src="imagenes/plano.png" width="1000" align="center">
 
 
 **Para los cuatro casos, deberá incluir una gráfica en la que se visualice claramente la curva ADSR. Deberá añadir la información necesaria para su correcta interpretación, aunque esa información puede reducirse a colocar etiquetas y títulos adecuados en la propia gráfica (se valorará positivamente esta alternativa).**
@@ -205,7 +205,7 @@ Entonces, creamos un `doremitremolo.sco` con tremolo (substituyendo algunos valo
 
 El resultado lo podemos ver en el wavesurfer:
 
-<img src="imagenes/doremitremo.png" width="800" align="center">
+<img src="imagenes/doremitremo.png" width="1000" align="center">
 
   #### Vibrato
   
@@ -241,11 +241,11 @@ Creamos un `doremivibrato.sco` donde en lugar de 13 ponemos 23 (de esta forma se
 
 Cuando reproducíamos el audio, oíamos perfectamente el vibrato. Aun así, a la hora de buscarlo por la señal, no lo encontrabamos. Entonces nos dimos cuenta de que una buena forma de verlo, donde se aprecia claramente, es en el espectograma. 
 
-<img src="imagenes/doremivibrato1.png" width="800" align="center">
+<img src="imagenes/doremivibrato1.png" width="1000" align="center">
 
 En la siguiente imagen, podemos comparar claramente el vibrato en el espectograma de la izquierda, y sin vibrato en la derecha. 
 
-<img src="imagenes/doremivibrato2.png" width="400" align="center">
+<img src="imagenes/doremivibrato2.png" width="300" align="center">
 
 - **Si ha generado algún efecto por su cuenta, explique en qué consiste, cómo lo ha implementado y qué**
   **resultado ha producido. Incluya, en el directorio `work/ejemplos`, los ficheros necesarios para apreciar**

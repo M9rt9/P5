@@ -43,8 +43,8 @@ InstrumentDumb	ADSR_A=0.05; ADSR_D=0.1; ADSR_S=0.2; ADSR_R=0.1; N=40;
 ```
 
 <img src="imagenes/percusion.png" width="300" align="center">
-
-*nota*: Como vemos, he usado la misma fotografía que en el anterior caso, ya que es el mismo. 
+  
+   *nota*: Como vemos, he usado la misma fotografía que en el anterior caso, ya que es el mismo. 
 
    **El intérprete da por finalizada la nota antes de su completa extinción, iniciándose una disminució abrupta del sonido hasta su finalización.**
 	  
@@ -171,17 +171,18 @@ const vector<float> & Seno::synthesize() {
   **índice de modulación) en la señal generada (se valorará que la explicación esté contenida en las propias**
   **gráficas, sin necesidad de *literatura*).**
   
-Hemos creado un doremitremo.sco en el que le añadimos un efecto tremolo
+  Hemos creado un doremitremo.sco en el que le añadimos un efecto tremolo
 
   
   #### Trémolo
   
-En el `effects.orc` tenemos el trémolo:
+  En el `effects.orc` tenemos el trémolo:
 
 ```
 13	Tremolo A=0.5; fm=10;
 ```
-Entonces, creamos un `doremitremolo.sco` con tremolo (substituyendo algunos valores por el número trece).
+
+  Entonces, creamos un `doremitremolo.sco` con tremolo (substituyendo algunos valores por el número trece).
 
 ```
 0       9       1       60      100
@@ -205,19 +206,19 @@ Entonces, creamos un `doremitremolo.sco` con tremolo (substituyendo algunos valo
 40      0       1       0       0
 ```
 
-El resultado lo podemos ver en el wavesurfer:
+  El resultado lo podemos ver en el wavesurfer:
 
 <img src="imagenes/doremitremo.png" width="1000" align="center">
 
   #### Vibrato
   
-En el ya comentado archivo `effects.orc`, añadimos una línea nueva:
+  En el ya comentado archivo `effects.orc`, añadimos una línea nueva:
 ```
 13	Tremolo A=0.5; fm=10;
 23	Vibrato I=0.5; fm=8;
 ```
 
-Creamos un `doremivibrato.sco` donde en lugar de 13 ponemos 23 (de esta forma señalamos que queremos un vibrato.)
+  Creamos un `doremivibrato.sco` donde en lugar de 13 ponemos 23 (de esta forma señalamos que queremos un vibrato.)
 
 ```
 0       9       1       60      100
@@ -241,11 +242,11 @@ Creamos un `doremivibrato.sco` donde en lugar de 13 ponemos 23 (de esta forma se
 40      0       1       0       0
 ```
 
-Cuando reproducíamos el audio, oíamos perfectamente el vibrato. Aun así, a la hora de buscarlo por la señal, no lo encontrabamos. Entonces nos dimos cuenta de que una buena forma de verlo, donde se aprecia claramente, es en el espectograma. 
+  Cuando reproducíamos el audio, oíamos perfectamente el vibrato. Aun así, a la hora de buscarlo por la señal, no lo encontrabamos. Entonces nos dimos cuenta de que una buena forma de verlo, donde se aprecia claramente, es en el espectograma. 
 
 <img src="imagenes/doremivibrato1.png" width="1000" align="center">
 
-En la siguiente imagen, podemos comparar claramente el vibrato en el espectograma de la izquierda, y sin vibrato en la derecha. 
+  En la siguiente imagen, podemos comparar claramente el vibrato en el espectograma de la izquierda, y sin vibrato en la derecha. 
 
 <img src="imagenes/doremivibrato2.png" width="300" align="center">
 
@@ -264,19 +265,19 @@ En la siguiente imagen, podemos comparar claramente el vibrato en el espectogram
 - **Use el instrumento para generar un vibrato de *parámetros razonables* e incluya una gráfica en la que se**
   **vea, claramente, la correspondencia entre los valores `N1`, `N2` e `I` con la señal obtenida.**
 
-Leyendo el documento de John, sabemos que:
+  Leyendo el documento de John, sabemos que:
 
-c/m = N1/N2
+  c/m = N1/N2
 
-Entonces, 
+  Entonces, 
 
-fc = fm * N1/N2.
+  fc = fm * N1/N2.
 
-Para llevar a cabo este apartado, vamos a ir haciendo combinaciones con los siguientes parámetros. 
+  Para llevar a cabo este apartado, vamos a ir haciendo combinaciones con los siguientes parámetros. 
 
 #### Variando la I, dejando la N1 y N2 fija
 
-- Caso 1: 
+  - Caso 1: 
 
 - [ ] I = 5
 - [x] I = 10
@@ -284,15 +285,15 @@ Para llevar a cabo este apartado, vamos a ir haciendo combinaciones con los sigu
 - [x] N1 = 100, N2 = 10
 - [ ] N1 = 40, N2 = 10
 
-Como vemos, hacemos fm 10 veces mayor a fc, y la I la pon
+  Como vemos, hacemos fm 10 veces mayor a fc, y la I la pon
 
-Todo esto lo ponemos en un nuevo fichero llamado `sintesis_intr.orc`:
+  Todo esto lo ponemos en un nuevo fichero llamado `sintesis_intr.orc`:
 
 ```
 1	fm	ADSR_A=0.08; ADSR_D=0; ADSR_S=0.4; ADSR_R=0.02; N1=100; N2=10; I=10;
 ```
 
-Para hacer las pruebas, hemos creado una nota sol, en un fichero `sol.sco`:
+  Para hacer las pruebas, hemos creado una nota sol, en un fichero `sol.sco`:
 
 ```
 40	9	1	67	100
@@ -300,7 +301,7 @@ Para hacer las pruebas, hemos creado una nota sol, en un fichero `sol.sco`:
 40	0	1	0	0
 ```
 
-Ahora ya estamos listos para introducir el siguiente comando en la terminal:
+  Ahora ya estamos listos para introducir el siguiente comando en la terminal:
 
 ```
 synth sintesis_intr.orc sol.sco fm1.wav
@@ -308,13 +309,13 @@ synth sintesis_intr.orc sol.sco fm1.wav
 
 <img src="imagenes/11.png" width="1000" align="center">
 
-Haciendo zoom:
+  Haciendo zoom:
 
 <img src="imagenes/22.png" width="1000" align="center">
+  
+  Ahora ya podemos ir jugando con la I. 
 
-Ahora ya podemos ir jugando con la I. 
-
-- Caso 2: aumentamos I
+  - Caso 2: aumentamos I
 
 - [ ] I = 5
 - [ ] I = 10
@@ -322,17 +323,17 @@ Ahora ya podemos ir jugando con la I.
 - [x] N1 = 100, N2 = 10
 - [ ] N1 = 40, N2 = 10
 
-Modificamos `sintesis_intr.orc`:
+  Modificamos `sintesis_intr.orc`:
 
 ```
 1	fm	ADSR_A=0.08; ADSR_D=0; ADSR_S=0.4; ADSR_R=0.02; N1=100; N2=10; I=20;
 ```
 
-Y el resultado, después de crear el .wav, es el siguiente:
+  Y el resultado, después de crear el .wav, es el siguiente:
 
 <img src="imagenes/33.png" width="1000" align="center">
 
-Como vemos y como era de esperar, al aumentar la I, tambien se hace más notoria y abrupta. 
+  Como vemos y como era de esperar, al aumentar la I, tambien se hace más notoria y abrupta. 
 
 - Caso 3: disminuímos I
 
@@ -342,15 +343,15 @@ Como vemos y como era de esperar, al aumentar la I, tambien se hace más notoria
 - [x] N1 = 100, N2 = 10
 - [ ] N1 = 40, N2 = 10
 
-Volvemos a modificar `sintesis_intr.orc`, y haciendo los pasos de siempre, obtenemos:
+  Volvemos a modificar `sintesis_intr.orc`, y haciendo los pasos de siempre, obtenemos:
 
 <img src="imagenes/33.png" width="1000" align="center">
 
-Tal i como se observa, es muy leve la notoriedad de la I cuando vamos disminuyendo. De hecho, con valores inferiores a 5, no se notaba a simple vista. 
+  Tal i como se observa, es muy leve la notoriedad de la I cuando vamos disminuyendo. De hecho, con valores inferiores a 5, no se notaba a simple vista. 
 
 #### Variando la N1 y N2, dejando la I fija
 
-Ahora toca dejar fija la I, y variar la N1 y N2. Para empezar, si recordamos, antes notabamos la I cada 10 periodos de la señal. Entonces, si ahora varíamos el valor de N1 y N2 de forma que fc sea 4 veces fm, vemos como la I aparecerá cada 4 periodos, en lugar de 10. 
+  Ahora toca dejar fija la I, y variar la N1 y N2. Para empezar, si recordamos, antes notabamos la I cada 10 periodos de la señal. Entonces, si ahora varíamos el valor de N1 y N2 de forma que fc sea 4 veces fm, vemos como la I aparecerá cada 4 periodos, en lugar de 10. 
 
 - [ ] I = 5
 - [x] I = 10

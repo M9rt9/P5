@@ -64,6 +64,10 @@ InstrumentDumb	ADSR_A=0.05; ADSR_D=0.1; ADSR_S=0.2; ADSR_R=0.1; N=40;
   **ellos, el ataque es relativamente rápido hasta alcanzar el nivel de mantenimiento (sin sobrecarga), y la**
   **liberación también es bastante rápida.**
 
+```
+InstrumentDumb	ADSR_A=0.02; ADSR_D=0; ADSR_S=0.5; ADSR_R=0.02; N=40;
+```
+
 <img src="imagenes/plano.png" width="1000" align="center">
 
 

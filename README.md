@@ -38,9 +38,93 @@ Ejercicios.
 **Implemente el instrumento `Seno` tomando como modelo el `InstrumentDumb`. La señal deberá formarse mediante búsqueda de los valores en una tabla.**
 
 - **Incluya, a continuación, el código del fichero `seno.cpp` con los métodos de la clase Seno.**
+```c
+
+#include <iostream>
+#include <math.h>
+#include "seno.h"
+#include "keyvalue.h"
+ 
+#include <stdlib.h>
+ 
+using namespace upc;
+using namespace std;
+ 
+Seno::Seno(const std::string &param) 
+  : adsr(SamplingRate, param) {
+  bActive = false;
+  x.resize(BSIZE);
+ 
+  /*
+    You can use the class keyvalue to parse "param" and configure your instrument.
+    Take a Look at keyvalue.h    
+  */
+  
+  KeyValue kv(param);
+  int N;
+ 
+  if (!kv.to_int("N",N))
+    N = 40; //default value
+  
+  //Create a tbl with one period of a sinusoidal wave
+  tbl.resize(N);
+  float phase = 0, step = 2 * M_PI /(float) N;
+  index = 0;
+  for (int i=0; i < N ; ++i) {
+    tbl[i] = sin(phase);
+    
+    phase += step;
+  }
+}
+ 
+ 
+void Seno::command(long cmd, long note, long vel) {
+  if (cmd == 9) {		//'Key' pressed: attack begins
+    bActive = true;
+    adsr.start();
+    index = 0;
+    f0=(pow(2,(note-69.0)/12.0))*440;
+    pass = (tbl.size()*f0)/(double) SamplingRate ; 
+  	A = vel / 127.;
+    fase = 0;
+  }
+  else if (cmd == 8) {	//'Key' released: sustain ends, release begins
+    adsr.stop();
+  }
+  else if (cmd == 0) {	//Sound extinguished without waiting for release to end
+    adsr.end();
+  }
+}
+ 
+ 
+const vector<float> & Seno::synthesize() {
+  if (not adsr.active()) {
+    x.assign(x.size(), 0);
+    bActive = false;
+    return x;
+  }
+  else if (not bActive)
+    return x;
+  for (unsigned int i=0; i<x.size(); ++i) {
+   
+ 
+ //Hemos puesto directamente con interpolación
+    fase = fmod(fase + pass,tbl.size());
+    index = floor(fase);
+ 
+    x[i] = A*(tbl[index]+(tbl[index+1]-tbl[index])*(fase-index));
+ 
+  
+  }
+  adsr(x); //apply envelope to x and update internal status of ADSR
+  return x;
+}
+
+```
 - **Explique qué método se ha seguido para asignar un valor a la señal a partir de los contenidos en la tabla,**
   **e incluya una gráfica en la que se vean claramente (use pelotitas en lugar de líneas) los valores de la**
   **tabla y los de la señal generada.**
+  
 - **Si ha implementado la síntesis por tabla almacenada en fichero externo, incluya a continuación el código**
   **del método `command()`.**
 
@@ -50,6 +134,85 @@ Ejercicios.
   **sinusoidal. Deberá explicar detalladamente cómo se manifiestan los parámetros del efecto (frecuencia e**
   **índice de modulación) en la señal generada (se valorará que la explicación esté contenida en las propias**
   **gráficas, sin necesidad de *literatura*).**
+  
+Hemos creado un doremitremo.sco en el que le añadimos un efecto tremolo
+
+  
+  #### Trémolo
+  
+En el `effects.orc` tenemos el trémolo:
+
+```
+13	Tremolo A=0.5; fm=10;
+```
+Entonces, creamos un `doremitremolo.sco` con tremolo (substituyendo algunos valores por el número trece).
+
+```
+0       9       1       60      100
+120     8       1       60      100
+0       12      1       13      1
+40      9       1       62      100
+120     8       1       62      100
+40      9       1       64      100
+120     8       1       64      100
+40      9       1       65      100
+120     8       1       65      100
+40      9       1       67      100
+120     8       1       67      100
+40      9       1       69      100
+120     8       1       69      100
+40      9       1       71      100
+0       12      1       13      0
+120     8       1       71      100
+40      9       1       72      100
+120     8       1       72      100
+40      0       1       0       0
+```
+
+El resultado lo podemos ver en el wavesurfer:
+
+<img src="imagenes/doremitremo" width="800" align="center">
+
+  #### Vibrato
+  
+En el ya comentado archivo `effects.orc`, añadimos una línea nueva:
+```
+13	Tremolo A=0.5; fm=10;
+23	Vibrato I=0.5; fm=8;
+```
+
+Creamos un `doremivibrato.sco` donde en lugar de 13 ponemos 23 (de esta forma señalamos que queremos un vibrato.)
+
+```
+0       9       1       60      100
+120     8       1       60      100
+0       12      1       23      1
+40      9       1       62      100
+120     8       1       62      100
+40      9       1       64      100
+120     8       1       64      100
+40      9       1       65      100
+120     8       1       65      100
+40      9       1       67      100
+120     8       1       67      100
+40      9       1       69      100
+120     8       1       69      100
+40      9       1       71      100
+0       12      1       23      0
+120     8       1       71      100
+40      9       1       72      100
+120     8       1       72      100
+40      0       1       0       0
+```
+
+Cuando reproducíamos el audio, oíamos perfectamente el vibrato. Aun así, a la hora de buscarlo por la señal, no lo encontrabamos. Entonces nos dimos cuenta de que una buena forma de verlo, donde se aprecia claramente, es en el espectograma. 
+
+<img src="imagenes/doremivibrato1" width="800" align="center">
+
+En la siguiente imagen, podemos comparar claramente el vibrato en el espectograma de la izquierda, y sin vibrato en la derecha. 
+
+<img src="imagenes/doremivibrato2" width="800" align="center">
+
 - **Si ha generado algún efecto por su cuenta, explique en qué consiste, cómo lo ha implementado y qué**
   **resultado ha producido. Incluya, en el directorio `work/ejemplos`, los ficheros necesarios para apreciar**
   **el efecto, e indique, a continuación, la orden necesaria para generar los ficheros de audio usando el**
@@ -64,6 +227,9 @@ Ejercicios.
 
 - **Use el instrumento para generar un vibrato de *parámetros razonables* e incluya una gráfica en la que se**
   **vea, claramente, la correspondencia entre los valores `N1`, `N2` e `I` con la señal obtenida.**
+
+  
+
 - **Use el instrumento para generar un sonido tipo clarinete y otro tipo campana. Tome los parámetros del**
   **sonido (N1, N2 e I) y de la envolvente ADSR del citado artículo. Con estos sonidos, genere sendas escalas**
   **diatónicas (fichero `doremi.sco`) y ponga el resultado en los ficheros `work/doremi/clarinete.wav` y**

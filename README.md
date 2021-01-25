@@ -419,6 +419,8 @@ Hemos usado el clarinete. El audio de la versión de esta canción con nuestro c
 
 #### Pantera Rosa
 
+Hemos hecho la canción de la pantera rosa con el instrumento clarinete, creado anteriormente. Se encuentra en la carpeta /work. Hemos seleccionado el instrumento 7, la original tenía hasta 8. 
+
 <img src="imagenes/pantera.jpg" width="200" align="center">
 
 

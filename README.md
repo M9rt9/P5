@@ -61,7 +61,7 @@ InstrumentDumb	ADSR_A=0.05; ADSR_D=0.1; ADSR_S=0.2; ADSR_R=0.1; N=40;
   
   
 * **Un instrumento *plano*, como los de cuerdas frotadas (violines y semejantes) o algunos de viento. En**
-  **ellos, el ataque es relativamente rápido hasta alcanzar el nivel de mantenimiento (sin sobrecarga), y la**
+  **ellos, el ataquees relativamente rápido hasta alcanzar el nivel de mantenimiento (sin sobrecarga), y la**
   **liberación también es bastante rápida.**
 
 ```

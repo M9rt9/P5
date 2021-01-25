@@ -419,8 +419,27 @@ Hemos usado el clarinete. El audio de la versión de esta canción con nuestro c
 
 #### Pantera Rosa
 
-Hemos hecho la canción de la pantera rosa con el instrumento clarinete, creado anteriormente. Se encuentra en la carpeta /work. Hemos seleccionado el instrumento 7, la original tenía hasta 13, pero nos hemos quedado con la melodia principal. 
+Hemos hecho la canción de la pantera rosa con el instrumento clarinete, creado anteriormente. Se encuentra en la carpeta /work. Hemos seleccionado el instrumento 7, la original tenía hasta 13, pero nos hemos quedado con la melodia principal. Hay que esperar un poquito para que empiece. 
 
+Con el comando siguiente:
+
+```
+midi2sco pink.mid pantera_2.sco
+```
+
+creamos el fichero .sco. 
+
+Seguidamente,
+
+```
+synth clarinete.orc pantera_2.sco pantera.wav
+```
+
+Con la línea de clarinete.orc ahora cambiada a instrumento 7. 
+
+```
+7	fm	ADSR_A=0.1; ADSR_D=0; ADSR_S=0.9; ADSR_R=0; N1=900; N2=600; I=2;
+```
 <img src="imagenes/pantera.jpg" width="200" align="center">
 
 
